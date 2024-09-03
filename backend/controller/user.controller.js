@@ -6,6 +6,7 @@ import User from "../models/user.model.js"
         const filteredUserId= await User.find({_id:{ $ne: loggedInUserId}}).select("-password")
         
         res.status(200).json(filteredUserId)
+        console.log(filteredUserId)
 
     } catch (error) {
         console.log("Error in getUserForSidebar: ",error.message)

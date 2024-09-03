@@ -62,7 +62,7 @@ try {
     const isPasswordCorrect= await bcrypt.compare(password,user?.password || "")
      if (!user || !isPasswordCorrect){
         return res.status(400).json({error:"Invalid username or password"})
-     }
+     }  
      gnerateTokenAndSetCookie(user._id,res)
 
      res.status(200).json({
